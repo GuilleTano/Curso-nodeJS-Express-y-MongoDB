@@ -1,6 +1,7 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
-const password = "xkRO3lansRukXIh1";
+const password = process.env.MONGODB_PASS;
 const uri = `mongodb+srv://user_bicicletasDB:${password}@clusterbicicletas.y84eljw.mongodb.net/test`;
 const options = {dbName: "test_red_bicicletas"};
 
