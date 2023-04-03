@@ -1,0 +1,44 @@
+head
+  meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  title Red Biciletas - Tu red amiga de las bicicletas
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65' crossorigin='anonymous')
+  link(href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i' rel='stylesheet')
+  style.
+    body {
+    background-color: #222222;
+    /* Color de fondo oscuro */
+    }
+    
+main.mt-3
+  .container(style='text-align:center')
+    h1.text-light Red Bicicletas
+    img(src='../assets/img/bicilogin.jpg' alt='logo Red Bicicletas' width='290px' style='margin-bottom:20px')
+    #show-alerts(style='text-align:center')
+    div
+      h2.h2.fw-bold.mb-3.text-light Inicio de sesi&oacute;n
+      if info && info.message 
+        div.alert.alert-danger
+          = info.message
+    form(action='/login' method='post')
+      .col-md-4.offset-md-4.form-floating.mb-3
+        input#email.form-control(type='email' placeholder='Email' name='email')
+        label(for='email') Email 
+      .col-md-4.offset-md-4.form-floating.mb-3
+        input#password.form-control(type='password' placeholder='Contraseña' name='password')
+        label(for='password') Contraseña:
+      .d-grid.gap-2.col-3.mx-auto
+        button#loginBtn.btn.btn-primary(type='submit') Ingresar
+    .d-grid.gap-2.col-3.mx-auto.mt-3
+      a#forgotPass.btn.btn-link(href='/forgotPassword') No recuerdo mi contraseña
+
+footer.text-muted.mt-3
+  .container
+    p
+      | Este sitio forma parte de el curso Desarrollo del lado servidor: NodeJS, Express y MongoDB de Coursera
+      | 2023
+script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js' integrity='sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V' crossorigin='anonymous')
+script(src='https://use.fontawesome.com/releases/v6.1.0/js/all.js')
+
